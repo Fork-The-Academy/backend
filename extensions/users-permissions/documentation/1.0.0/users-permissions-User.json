@@ -1190,7 +1190,6 @@
           "username",
           "email",
           "password",
-          "userCC",
           "wallet",
           "voteProposalState"
         ],
@@ -1272,7 +1271,6 @@
           "username",
           "email",
           "password",
-          "userCC",
           "wallet",
           "voteProposalState"
         ],

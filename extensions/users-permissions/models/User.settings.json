@@ -63,7 +63,7 @@
     },
     "userCC": {
       "type": "biginteger",
-      "required": true,
+      "required": false,
       "unique": true
     },
     "wallet": {

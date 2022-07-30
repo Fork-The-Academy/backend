@@ -530,7 +530,6 @@
                 "username",
                 "email",
                 "password",
-                "userCC",
                 "wallet",
                 "voteProposalState"
               ],
