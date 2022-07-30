@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "certificates",
+  "info": {
+    "name": "certificates"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "email": {
+      "type": "email"
+    },
+    "nombre": {
+      "type": "string"
+    },
+    "blockchain_id": {
+      "type": "string"
+    }
+  }
+}
