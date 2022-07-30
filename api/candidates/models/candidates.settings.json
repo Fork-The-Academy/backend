@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "candidates",
+  "info": {
+    "name": "Candidates"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "voteCound": {
+      "required": true,
+      "default": 0,
+      "min": 0,
+      "type": "integer"
+    },
+    "blockchainId": {
+      "type": "integer",
+      "min": 0
+    }
+  }
+}

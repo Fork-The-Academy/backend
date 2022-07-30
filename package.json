@@ -1,0 +1,47 @@
+{
+  "name": "dapp-voting-system",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "develop": "strapi develop",
+    "dev": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "crypto-ts": "^1.0.2",
+    "ethereumjs-tx": "^2.1.2",
+    "knex": "0.21.18",
+    "sqlite3": "5.0.0",
+    "strapi": "3.6.8",
+    "strapi-admin": "3.6.8",
+    "strapi-connector-bookshelf": "3.6.8",
+    "strapi-connector-mongoose": "3.6.8",
+    "strapi-plugin-content-manager": "3.6.8",
+    "strapi-plugin-content-type-builder": "3.6.8",
+    "strapi-plugin-documentation": "3.6.8",
+    "strapi-plugin-email": "3.6.8",
+    "strapi-plugin-graphql": "3.6.8",
+    "strapi-plugin-i18n": "3.6.8",
+    "strapi-plugin-upload": "3.6.8",
+    "strapi-plugin-users-permissions": "3.6.8",
+    "strapi-provider-email-sendgrid": "^3.6.8",
+    "strapi-utils": "3.6.8",
+    "web3": "^1.5.2"
+  },
+  "author": {
+    "name": "edward@lealsystem.net"
+  },
+  "strapi": {
+    "uuid": "900c5df5-83f6-4c0c-8f81-729c9daaa7d7"
+  },
+  "engines": {
+    "node": ">=10.16.0 <=14.16.1",
+    "npm": "^6.0.0"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "method": "PUT",
+      "path": "/users/updateVoteState/:id",
+      "handler": "User.updateUserVoteState",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
