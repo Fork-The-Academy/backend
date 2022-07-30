@@ -5,7 +5,7 @@ module.exports = ({ env }) => ({
   "proxy": {
     "enabled": true,
     "ssl": true,
-    "host": 'dev-voting-system.herokuapp.com',
+    "host": 'back-for-the-academy.herokuapp.com',
     "port": 443
   },
   admin: {
