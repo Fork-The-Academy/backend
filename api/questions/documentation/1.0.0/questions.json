@@ -1,18 +1,18 @@
 {
   "paths": {
-    "/courses": {
+    "/questions": {
       "get": {
         "deprecated": false,
-        "description": "Find all the courses's records",
+        "description": "Find all the questions's records",
         "responses": {
           "200": {
-            "description": "Retrieve courses document(s)",
+            "description": "Retrieve questions document(s)",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Courses"
+                    "$ref": "#/components/schemas/Questions"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Courses"
+          "Questions"
         ],
         "parameters": [
           {
@@ -194,14 +194,14 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new courses record",
+        "description": "Create a new questions record",
         "responses": {
           "200": {
-            "description": "Retrieve courses document(s)",
+            "description": "Retrieve questions document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Courses"
+                  "$ref": "#/components/schemas/Questions"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Courses"
+          "Questions"
         ],
         "requestBody": {
           "description": "",
@@ -247,20 +247,20 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewCourses"
+                "$ref": "#/components/schemas/NewQuestions"
               }
             }
           }
         }
       }
     },
-    "/courses/count": {
+    "/questions/count": {
       "get": {
         "deprecated": false,
-        "description": "Retrieve the number of courses documents",
+        "description": "Retrieve the number of questions documents",
         "responses": {
           "200": {
-            "description": "Retrieve courses document(s)",
+            "description": "Retrieve questions document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -306,22 +306,22 @@
         },
         "summary": "",
         "tags": [
-          "Courses"
+          "Questions"
         ],
         "parameters": []
       }
     },
-    "/courses/{id}": {
+    "/questions/{id}": {
       "get": {
         "deprecated": false,
-        "description": "Find one courses record",
+        "description": "Find one questions record",
         "responses": {
           "200": {
-            "description": "Retrieve courses document(s)",
+            "description": "Retrieve questions document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Courses"
+                  "$ref": "#/components/schemas/Questions"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Courses"
+          "Questions"
         ],
         "parameters": [
           {
@@ -376,14 +376,14 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a single courses record",
+        "description": "Update a single questions record",
         "responses": {
           "200": {
-            "description": "Retrieve courses document(s)",
+            "description": "Retrieve questions document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Courses"
+                  "$ref": "#/components/schemas/Questions"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Courses"
+          "Questions"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewCourses"
+                "$ref": "#/components/schemas/NewQuestions"
               }
             }
           }
@@ -449,10 +449,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a single courses record",
+        "description": "Delete a single questions record",
         "responses": {
           "200": {
-            "description": "deletes a single courses based on the ID supplied",
+            "description": "deletes a single questions based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Courses"
+          "Questions"
         ],
         "parameters": [
           {
@@ -514,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Courses": {
+      "Questions": {
         "required": [
           "id"
         ],
@@ -522,16 +522,10 @@
           "id": {
             "type": "string"
           },
-          "name": {
+          "data": {
             "type": "string"
           },
-          "description": {
-            "type": "string"
-          },
-          "rating": {
-            "type": "number"
-          },
-          "teacher": {
+          "answer": {
             "required": [
               "id"
             ],
@@ -539,16 +533,10 @@
               "id": {
                 "type": "string"
               },
-              "fullName": {
+              "content": {
                 "type": "string"
               },
-              "rating": {
-                "type": "number"
-              },
-              "image": {
-                "type": "string"
-              },
-              "description": {
+              "question": {
                 "type": "string"
               },
               "published_at": {
@@ -562,138 +550,19 @@
               }
             }
           },
-          "content": {
-            "type": "string"
-          },
-          "image": {
-            "required": [
-              "id",
-              "name",
-              "hash",
-              "mime",
-              "size",
-              "url",
-              "provider"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "alternativeText": {
-                "type": "string"
-              },
-              "caption": {
-                "type": "string"
-              },
-              "width": {
-                "type": "integer"
-              },
-              "height": {
-                "type": "integer"
-              },
-              "formats": {
-                "type": "object"
-              },
-              "hash": {
-                "type": "string"
-              },
-              "ext": {
-                "type": "string"
-              },
-              "mime": {
-                "type": "string"
-              },
-              "size": {
-                "type": "number"
-              },
-              "url": {
-                "type": "string"
-              },
-              "previewUrl": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "provider_metadata": {
-                "type": "object"
-              },
-              "related": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "contract_address": {
-            "type": "string"
-          },
-          "questions": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "data": {
-                  "type": "string"
-                },
-                "answer": {
-                  "type": "string"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
           "published_at": {
             "type": "string",
             "format": "date-time"
           }
         }
       },
-      "NewCourses": {
+      "NewQuestions": {
         "properties": {
-          "name": {
+          "data": {
             "type": "string"
           },
-          "description": {
+          "answer": {
             "type": "string"
-          },
-          "rating": {
-            "type": "number"
-          },
-          "teacher": {
-            "type": "string"
-          },
-          "content": {
-            "type": "string"
-          },
-          "contract_address": {
-            "type": "string"
-          },
-          "questions": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           },
           "published_at": {
             "type": "string",
@@ -711,7 +580,7 @@
   },
   "tags": [
     {
-      "name": "Courses"
+      "name": "Questions"
     }
   ]
 }

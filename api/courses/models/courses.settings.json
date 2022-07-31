@@ -41,6 +41,9 @@
     },
     "contract_address": {
       "type": "string"
+    },
+    "questions": {
+      "collection": "questions"
     }
   }
 }
