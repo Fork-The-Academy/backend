@@ -632,6 +632,9 @@
               }
             }
           },
+          "contract_address": {
+            "type": "string"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -653,6 +656,9 @@
             "type": "string"
           },
           "content": {
+            "type": "string"
+          },
+          "contract_address": {
             "type": "string"
           },
           "published_at": {
