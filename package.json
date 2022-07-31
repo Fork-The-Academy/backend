@@ -30,6 +30,7 @@
     "strapi-plugin-upload": "3.6.8",
     "strapi-plugin-users-permissions": "3.6.8",
     "strapi-provider-email-sendgrid": "^3.6.8",
+    "strapi-provider-upload-cloudinary": "^3.6.10",
     "strapi-utils": "3.6.8",
     "web3": "^1.5.2"
   },

@@ -562,6 +562,9 @@
               }
             }
           },
+          "content": {
+            "type": "string"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -580,6 +583,9 @@
             "type": "number"
           },
           "teacher": {
+            "type": "string"
+          },
+          "content": {
             "type": "string"
           },
           "published_at": {

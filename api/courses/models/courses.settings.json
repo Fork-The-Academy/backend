@@ -23,6 +23,9 @@
     },
     "teacher": {
       "model": "teachers"
+    },
+    "content": {
+      "type": "richtext"
     }
   }
 }
