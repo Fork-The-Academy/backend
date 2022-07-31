@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "questions",
   "info": {
-    "name": "questions"
+    "name": "questions",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -17,6 +18,9 @@
     "answer": {
       "via": "question",
       "model": "answers"
+    },
+    "choices": {
+      "type": "json"
     }
   }
 }

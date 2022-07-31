@@ -539,6 +539,9 @@
               "answer": {
                 "type": "string"
               },
+              "choices": {
+                "type": "object"
+              },
               "published_at": {
                 "type": "string"
               },

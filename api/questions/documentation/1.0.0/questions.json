@@ -550,6 +550,9 @@
               }
             }
           },
+          "choices": {
+            "type": "object"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -563,6 +566,9 @@
           },
           "answer": {
             "type": "string"
+          },
+          "choices": {
+            "type": "object"
           },
           "published_at": {
             "type": "string",

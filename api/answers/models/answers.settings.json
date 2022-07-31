@@ -15,8 +15,8 @@
       "type": "string"
     },
     "question": {
-      "model": "questions",
-      "via": "answer"
+      "via": "answer",
+      "model": "questions"
     }
   }
 }
