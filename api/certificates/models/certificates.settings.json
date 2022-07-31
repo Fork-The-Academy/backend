@@ -12,18 +12,16 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "email": {
-      "type": "email"
-    },
-    "nombre": {
-      "type": "string"
-    },
-    "blockchain_id": {
+    "name": {
       "type": "string"
     },
     "users_permissions_user": {
       "plugin": "users-permissions",
       "model": "user"
+    },
+    "course": {
+      "model": "courses",
+      "via": "certificates"
     }
   }
 }

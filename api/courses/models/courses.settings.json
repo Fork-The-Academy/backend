@@ -44,6 +44,10 @@
     },
     "questions": {
       "collection": "questions"
+    },
+    "certificates": {
+      "via": "course",
+      "collection": "certificates"
     }
   }
 }

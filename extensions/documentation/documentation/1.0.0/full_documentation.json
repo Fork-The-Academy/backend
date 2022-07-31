@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "07/31/2022 12:08:21 PM"
+    "x-generation-date": "07/31/2022 1:11:02 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -6047,13 +6047,7 @@
           "id": {
             "type": "string"
           },
-          "email": {
-            "type": "string"
-          },
-          "nombre": {
-            "type": "string"
-          },
-          "blockchain_id": {
+          "name": {
             "type": "string"
           },
           "users_permissions_user": {
@@ -6113,6 +6107,58 @@
               }
             }
           },
+          "course": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "rating": {
+                "type": "number"
+              },
+              "teacher": {
+                "type": "string"
+              },
+              "content": {
+                "type": "string"
+              },
+              "image": {
+                "type": "string"
+              },
+              "contract_address": {
+                "type": "string"
+              },
+              "questions": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "certificates": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -6121,16 +6167,13 @@
       },
       "NewCertificates": {
         "properties": {
-          "email": {
-            "type": "string"
-          },
-          "nombre": {
-            "type": "string"
-          },
-          "blockchain_id": {
+          "name": {
             "type": "string"
           },
           "users_permissions_user": {
+            "type": "string"
+          },
+          "course": {
             "type": "string"
           },
           "published_at": {
@@ -6297,6 +6340,37 @@
               }
             }
           },
+          "certificates": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "users_permissions_user": {
+                  "type": "string"
+                },
+                "course": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -6324,6 +6398,12 @@
             "type": "string"
           },
           "questions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "certificates": {
             "type": "array",
             "items": {
               "type": "string"

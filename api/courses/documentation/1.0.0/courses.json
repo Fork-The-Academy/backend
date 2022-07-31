@@ -666,6 +666,37 @@
               }
             }
           },
+          "certificates": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "users_permissions_user": {
+                  "type": "string"
+                },
+                "course": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -693,6 +724,12 @@
             "type": "string"
           },
           "questions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "certificates": {
             "type": "array",
             "items": {
               "type": "string"
