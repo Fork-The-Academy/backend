@@ -11,6 +11,9 @@
  const abi = require('../abiPoap.json')
  const contractAddress = process.env.ETH_CONTRACT_ADDRESS_PROPOSALS
  const contract = new web3.eth.Contract(abi, contractAddress)
+
+ const base_url = 'https://api.mintnft.today';
+ const mintnft_api_key = process.env.MINT_NFT_API_KEY;
  
  const createProposalInBlockhain = async (proposalId) => {
      const fromAddress = process.env.ETH_ADDRESS
@@ -37,10 +40,37 @@
        return web3.eth.sendSignedTransaction(rawTx);
 }
 
+const generateMetadataNft = (username, course) => {
+    return  JSON.stringify({
+        external_url: 'https://res.cloudinary.com/dspzgcxaa/image/upload/v1659232705/Fork_Academy_u0kf21.jpg',
+        description: `${username} approving the course of ${course}`,
+        name: `${course}`
+    })
+}
+
+const generateNft = async(username, course) => {
+    const res = await fetch(`${base_url}/v1/upload/single`, {
+        method: 'POST',
+        headers: {
+            Authorization: `Basic ${mintnft_api_key}`,
+            "Content-Type": "multipart/form-data"
+        },
+        formData: {
+            metadata: generateMetadataNft(username, course),
+            image: fs.createReadSystem('https://res.cloudinary.com/dspzgcxaa/image/upload/v1659232705/Fork_Academy_u0kf21.jpg'),
+            asset: fs.createReadSystem('https://res.cloudinary.com/dspzgcxaa/image/upload/v1659232705/Fork_Academy_u0kf21.jpg')
+        }
+    });
+    const uploadIPFS = await res.json();
+
+    
+    console.log('IPFS: ', uploadIPFS);
+}
+
 module.exports = {
     lifecycles: {
         afterCreate(data){
-            
+            console.log('Data: ', data);
         }
     }
 };
