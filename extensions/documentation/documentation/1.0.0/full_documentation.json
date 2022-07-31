@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "07/30/2022 8:24:14 PM"
+    "x-generation-date": "07/31/2022 10:21:02 AM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -4969,6 +4969,63 @@
           "blockchain_id": {
             "type": "string"
           },
+          "users_permissions_user": {
+            "required": [
+              "id",
+              "username",
+              "email",
+              "password",
+              "wallet",
+              "voteProposalState"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "username": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              },
+              "resetPasswordToken": {
+                "type": "string"
+              },
+              "confirmationToken": {
+                "type": "string"
+              },
+              "confirmed": {
+                "type": "boolean"
+              },
+              "blocked": {
+                "type": "boolean"
+              },
+              "role": {
+                "type": "string"
+              },
+              "userCC": {
+                "type": "integer"
+              },
+              "wallet": {
+                "type": "object"
+              },
+              "voteProposalState": {
+                "type": "boolean"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -4984,6 +5041,9 @@
             "type": "string"
           },
           "blockchain_id": {
+            "type": "string"
+          },
+          "users_permissions_user": {
             "type": "string"
           },
           "published_at": {

@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "certificates",
   "info": {
-    "name": "certificates"
+    "name": "certificates",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -19,6 +20,10 @@
     },
     "blockchain_id": {
       "type": "string"
+    },
+    "users_permissions_user": {
+      "plugin": "users-permissions",
+      "model": "user"
     }
   }
 }
