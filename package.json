@@ -12,9 +12,11 @@
   },
   "devDependencies": {},
   "dependencies": {
+    "axios": "^0.27.2",
     "bcrypt": "^5.0.1",
     "crypto-ts": "^1.0.2",
     "ethereumjs-tx": "^2.1.2",
+    "form-data": "^4.0.0",
     "knex": "0.21.18",
     "sqlite3": "5.0.0",
     "strapi": "3.6.8",

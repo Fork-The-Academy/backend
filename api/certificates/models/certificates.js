@@ -4,9 +4,11 @@
  * Read the documentation (https://strapi.io/documentation/developer-docs/latest/development/backend-customization.html#lifecycle-hooks)
  * to customize this model
  */
+ const axios = require('axios');
  const host = process.env.ETH_PROVIDER || 'wss://rinkeby.infura.io/ws/v3/0c90cede2053432cac408091c5d57039'
  const Web3 = require('web3')
  const web3 = new Web3(host)
+ const FormData = require('form-data');
  const Tx = require('ethereumjs-tx').Transaction
  const abi = require('../abiPoap.json')
  const contractAddress = process.env.ETH_CONTRACT_ADDRESS_PROPOSALS
@@ -48,29 +50,55 @@ const generateMetadataNft = (username, course) => {
     })
 }
 
-const generateNft = async(username, course) => {
-    const res = await fetch(`${base_url}/v1/upload/single`, {
-        method: 'POST',
-        headers: {
-            Authorization: `Basic ${mintnft_api_key}`,
-            "Content-Type": "multipart/form-data"
-        },
-        formData: {
-            metadata: generateMetadataNft(username, course),
-            image: fs.createReadSystem('https://res.cloudinary.com/dspzgcxaa/image/upload/v1659232705/Fork_Academy_u0kf21.jpg'),
-            asset: fs.createReadSystem('https://res.cloudinary.com/dspzgcxaa/image/upload/v1659232705/Fork_Academy_u0kf21.jpg')
-        }
-    });
-    const uploadIPFS = await res.json();
 
-    
-    console.log('IPFS: ', uploadIPFS);
+
+const generateNft = async(username, course, publicWallet) => {
+    const ipsFormData = new FormData();
+    ipsFormData.append('metadata', generateMetadataNft(username, course));
+    ipsFormData.append('image', 'https://res.cloudinary.com/dspzgcxaa/image/upload/v1659232705/Fork_Academy_u0kf21.jpg')
+    ipsFormData.append('asset', 'https://res.cloudinary.com/dspzgcxaa/image/upload/v1659232705/Fork_Academy_u0kf21.jpg')
+    try {
+        axios.defaults.headers.common = {
+            "X-API-Key": mintnft_api_key,
+        };
+        const res = await axios({
+            method: 'POST',
+            url: `${base_url}/v1/upload/single`,
+            headers: {
+                "Content-Type": "multipart/form-data"
+            },
+            data: ipsFormData
+        });
+        console.log('Res IPS: ', res.data);
+        const urlIpfs = res.data.data.url;
+
+        // const mintSingle = await axios({
+        //     method: 'POST',
+        //     url: `${base_url}/v1/mint/single`,
+        //     headers: {
+        //         "Content-Type": "application/json",
+        //         data: {
+        //             wallet: publicWallet,
+        //             type: 'ERC721',
+        //             tokenCategory: 'soulbound',
+        //             network: 'testnet',
+        //             tokenUri: urlIpfs
+        //         }
+        //     },
+        // });
+        // console.log('mint single: ', mintSingle);
+    } catch (error) {
+        console.log('Error: ', error);
+    }
 }
 
 module.exports = {
     lifecycles: {
         afterCreate(data){
-            console.log('Data: ', data);
+            const username = data.users_permissions_user.username;
+            const publicWallet = data.users_permissions_user.wallet.publicKey;
+            const course = data.course.name;
+            generateNft(username, course, publicWallet);
         }
     }
 };
